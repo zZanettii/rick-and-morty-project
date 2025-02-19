@@ -1,0 +1,102 @@
+.content {
+  background-color: #f0fcff;
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center;
+  min-height: 100vh;
+  gap: 20px;
+  flex-direction: column
+}
+
+.title {
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  color: #f0fcff;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.card {
+  text-align: center;
+  align-items: center;
+  width: 300px;
+  height: auto;
+  background-color: #e2f9ff;
+  border-radius: 10px;
+}
+
+button {
+  border: #e2f9ff hidden;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  width: 100px;
+  color: #2c3539;
+  margin: 0 15px 20px 15px;
+}
+
+button:hover {
+  color: #e2f9ff;
+  background-color: #2c3539;
+  border: #e2f9ff solid 0.5px;
+}
+
+input {
+  margin-bottom: 5px;
+  text-align: center;
+  border-radius: 20px;
+  border: hidden;
+  background-color: #e2f9ff;
+  color: #2c3539;
+}
+
+.searchBtn {
+  width: 200px;
+  color: #2c3539;
+  justify-content: center;
+  align-items: center;
+  background-color: #e2f9ff;
+  margin: 0 15px;
+  border: hidden;
+  border-radius: 20px;
+}
+
+.searchBtn:hover {
+  border: #e2f9ff solid 1px;
+  background-color: #2c3539;
+  color: #e2f9ff;
+}
+
+.contentId {
+  background-color: #f0fcff;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.containerId {
+    display: flex;
+}
+
+.epId {
+  width: 300px;
+  height: 400px;
+  border-radius: 20px;
+  background-color: #e2f9ff;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+}
+
+.ep{
+    margin-bottom: 20px;
+}

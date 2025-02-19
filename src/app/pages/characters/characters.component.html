@@ -1,0 +1,83 @@
+@if (characterId) {
+<div class="contentId">
+
+  <div class="cardId" *ngIf="character">
+    <div class="textId">
+      <h3>Name: {{ character.name }}</h3>
+      <h3>#{{ character.id }}</h3>
+      <p>Status: {{ character.status }}</p>
+      <p>Specie: {{ character.species }}</p>
+      <div>
+        @if (character.type === '') {
+        <p>No type</p>
+        } @else {
+        <p>Type: {{ character.type }}</p>
+        }
+      </div>
+      <p>Gender: {{ character.gender }}</p>
+      <p>Origin: {{ character.origin.name }}</p>
+      <p>Character URL:</p>
+      <p>{{ character.url }}</p>
+      <p>Created At: {{ character.created }}</p>
+    </div>
+    <img class="imgId" src="{{ character.image }}" alt="{{ character.name }}" />
+  </div>
+</div>
+} @else {
+<div class="content">
+  <div class="welcome">
+    <img width="597" height="183" src="/name.png" alt="">
+  </div>
+  <form action="" class="form" [formGroup]="form">
+    <input type="text" placeholder="Name" formControlName="name" />
+
+    <select name="Status" id="" formControlName="status">
+      <option [value]="status" *ngFor="let status of statusList">
+        {{ status }}
+      </option>
+    </select>
+
+    <input type="text" placeholder="Species" formControlName="species" />
+
+    <select name="Gender" id="" formControlName="gender">
+      <option [value]="gender" *ngFor="let gender of genderList">
+        {{ gender }}
+      </option>
+    </select>
+    <button class="searchBtn" (click)="getCharacters(form.value)">
+      Search
+    </button>
+  </form>
+
+  <div class="btn">
+    <button *ngIf="previousUrl" (click)="anotherPage(previousUrl)">
+      Previous
+    </button>
+    <button *ngIf="nextUrl" (click)="anotherPage(nextUrl)">Next</button>
+  </div>
+
+  <div class="card" *ngFor="let character of charactersData">
+    <div class="infoCard">
+      <h3>Name: {{ character.name }}</h3>
+      <p>Specie: {{ character.species }}</p>
+      <p>Status: {{ character.status }}</p>
+      <p class="infoId">#{{ character.id }}</p>
+      <a [routerLink]="['/character/', character.id]"></a>
+    </div>
+
+    <div class="imgCard rotate">
+      <a [routerLink]="['/character/', character.id]">
+        <img
+          class="img"
+          src="{{ character.image }}"
+          alt="{{ character.name }}"
+        />
+      </a>
+    </div>
+
+    <div clas="loading" *ngIf="!character">
+      <p>Carregando...</p>
+    </div>
+  </div>
+</div>
+}

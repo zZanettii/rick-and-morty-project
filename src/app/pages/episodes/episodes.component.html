@@ -1,0 +1,48 @@
+@if (epId) {
+  <div class="contentId" *ngIf="episode">
+    <div class="containerId">
+      <div class="epId">
+        <h1>Name: {{episode.name}}</h1>
+        <h1># {{episode.id}}</h1>
+        <h2 class="ep">Episode: {{episode.episode}}</h2>
+        <p>Air Date: {{episode.air_date}}</p>
+        <p>Episode URL:</p>
+        <p>{{episode.url}}</p>
+        <p>Created At: {{episode.created}}</p>
+      </div>
+    </div>
+  </div>
+}@else {
+  <div class="content">
+    <div>
+      <img src="/icon-episode.png" alt="iconEps">
+    </div>
+  
+    <form action="" [formGroup]="form">
+      <input type="text" formControlName="name" placeholder="Name" />
+      <input type="text" formControlName="episode" placeholder="Episode" />
+      <button class="searchBtn" type="submit" (click)="getEpisodes(form.value)">Search</button>
+    </form>
+  
+    <div>
+      <button (click)="anotherPage(previousUrl)" *ngIf="previousUrl">
+        Previous
+      </button>
+      <button (click)="anotherPage(nextUrl)" *ngIf="nextUrl">Next</button>
+    </div>
+  
+    <div class="container" *ngFor="let episode of episodes">
+      <div class="card">
+        <h2>Name: {{episode.name}}</h2>
+        <h2># {{episode.id}}</h2>
+        <h3 class="ep">Episode: {{episode.episode}}</h3>
+        <p>Air Date: {{episode.air_date}}</p>
+        <p>Episode URL:</p>
+        <p>{{episode.url}}</p>
+        <p>Created At: {{episode.created}}</p>
+        <button [routerLink]="['/episode/', episode.id]">Card view</button>
+      </div>
+    </div>
+  </div>
+  
+}
