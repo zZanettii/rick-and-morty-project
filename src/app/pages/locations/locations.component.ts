@@ -5,11 +5,11 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 
 @Component({
-  selector: 'app-locations',
-  standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, RouterModule],
-  templateUrl: './locations.component.html',
-  styleUrl: './locations.component.css',
+    selector: 'app-locations',
+    standalone: true,
+    imports: [CommonModule, ReactiveFormsModule, RouterModule],
+    templateUrl: './locations.component.html',
+    styleUrl: './locations.component.css'
 })
 export class LocationsComponent {
  
@@ -93,3 +93,4 @@ export class LocationsComponent {
   }
 
 }
+""

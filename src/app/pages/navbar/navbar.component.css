@@ -1,13 +1,14 @@
 .navbar {
   align-items: center;
-  justify-content: center;
-  min-height: 100%;
+  justify-content: space-around;
+  height: fit-content;
   background-color: #f0fcff;
+  display: flex;
 }
 
 .logo-nav {
-  margin-left: 9rem;
   justify-content: center;
+  margin-right: 50rem;
   width: 40px;
   height: 40px;
   margin-top: 1rem;
@@ -17,10 +18,37 @@
   display: flex;
   justify-content: flex-end;
   text-align: center;
-  margin-right: 9rem;
   gap: 3rem;
   list-style-type: none;
   font-family: 'Courier New', Courier, monospace;
   font-weight: 600;
   cursor: pointer;
 }
+
+.menu{
+  color: black;
+}
+
+@media (max-width: 1300px) {
+.logo-nav{
+  margin-right: 30rem;
+}
+}
+
+@media (max-width: 900px) {
+  .logo-nav{
+    margin: 0;
+  }
+  }
+
+@media (max-width: 620px) {
+  .navbar{
+    justify-content: space-between;
+  }
+
+  .logo-nav{
+    margin-top: 0.5rem;
+    margin-left: 2rem;
+  }
+}
+ 

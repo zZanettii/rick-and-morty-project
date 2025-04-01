@@ -1,8 +1,24 @@
 <nav class="navbar">
-    <img class="logo-nav" src="/logo-black.png" alt="logo-nav">
+  <div class="logoMenu">
+    <img class="logo-nav" src="/logo-black.png" alt="logo-nav" />
+  </div>
+
+  <div class="listOptions">
     <ul class="option-nav">
-        <li [routerLink]="['/character']" routerLinkActive="router-link-active" >Characters</li>
-        <li [routerLink]="['/location']">Locations</li>
-        <li [routerLink]="['/episode']">Episodes</li>
+      @if (isApp) {
+      <button mat-button [matMenuTriggerFor]="menu"><mat-icon class="menu">menu</mat-icon></button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item [routerLink]="['/character']">Characters</button>
+        <button mat-menu-item [routerLink]="['/location']">Locations</button>
+        <button mat-menu-item [routerLink]="['/episode']">Episodes</button>
+      </mat-menu>
+      } @else {
+      <li [routerLink]="['/character']">
+        Characters
+      </li>
+      <li [routerLink]="['/location']">Locations</li>
+      <li [routerLink]="['/episode']">Episodes</li>
+      }
     </ul>
+  </div>
 </nav>

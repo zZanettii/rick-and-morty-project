@@ -1,6 +1,13 @@
 @if (characterId) {
 <div class="contentId">
-
+  <div class="arrowContainer">
+    <img
+      class="arrowBackImg"
+      routerLink="/character"
+      src="/arrow_back_24px.png"
+      alt=""
+    />
+  </div>
   <div class="cardId" *ngIf="character">
     <div class="textId">
       <h3>Name: {{ character.name }}</h3>
@@ -26,7 +33,7 @@
 } @else {
 <div class="content">
   <div class="welcome">
-    <img width="597" height="183" src="/name.png" alt="">
+    <img class="welcomeImg" width="597" height="183" src="/name.png" alt="" />
   </div>
   <form action="" class="form" [formGroup]="form">
     <input type="text" placeholder="Name" formControlName="name" />

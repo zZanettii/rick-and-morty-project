@@ -5,11 +5,11 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 
 @Component({
-  selector: 'app-characters',
-  standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, RouterModule],
-  templateUrl: './characters.component.html',
-  styleUrl: './characters.component.css',
+    selector: 'app-characters',
+    standalone: true,
+    imports: [CommonModule, ReactiveFormsModule, RouterModule],
+    templateUrl: './characters.component.html',
+    styleUrl: './characters.component.css'
 })
 export class CharactersComponent {
   charactersData: any[] = [];

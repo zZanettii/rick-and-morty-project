@@ -1,6 +1,9 @@
 @if (epId) {
   <div class="contentId" *ngIf="episode">
     <div class="containerId">
+      <div class="arrowContainer" >
+        <img class="arrowBackImg" routerLink="/episode" src="/arrow_back_24px.png" alt="">
+      </div>
       <div class="epId">
         <h1>Name: {{episode.name}}</h1>
         <h1># {{episode.id}}</h1>
@@ -14,23 +17,22 @@
   </div>
 }@else {
   <div class="content">
-    <div>
-      <img src="/icon-episode.png" alt="iconEps">
+    <div class="welcome">
+      <img class="welcomeImg" src="/icon-episode.png" alt="iconEps">
     </div>
   
-    <form action="" [formGroup]="form">
+    <form class="form" action="" [formGroup]="form">
       <input type="text" formControlName="name" placeholder="Name" />
       <input type="text" formControlName="episode" placeholder="Episode" />
       <button class="searchBtn" type="submit" (click)="getEpisodes(form.value)">Search</button>
     </form>
-  
-    <div>
-      <button (click)="anotherPage(previousUrl)" *ngIf="previousUrl">
+
+    <div class="btns">
+      <button class="nextprevBtn" (click)="anotherPage(previousUrl)" *ngIf="previousUrl">
         Previous
       </button>
-      <button (click)="anotherPage(nextUrl)" *ngIf="nextUrl">Next</button>
+      <button class="nextprevBtn" (click)="anotherPage(nextUrl)" *ngIf="nextUrl">Next</button>
     </div>
-  
     <div class="container" *ngFor="let episode of episodes">
       <div class="card">
         <h2>Name: {{episode.name}}</h2>
@@ -40,7 +42,7 @@
         <p>Episode URL:</p>
         <p>{{episode.url}}</p>
         <p>Created At: {{episode.created}}</p>
-        <button [routerLink]="['/episode/', episode.id]">Card view</button>
+        <button class="btnCard" [routerLink]="['/episode/', episode.id]">Card view</button>
       </div>
     </div>
   </div>

@@ -19,3 +19,8 @@ p{
     margin-bottom: 1rem;
 }
 
+@media (max-width: 460px) {
+    p{
+        font-size: 12px;
+    }
+}

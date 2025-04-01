@@ -5,11 +5,23 @@
     justify-content: center;
 }
 
+.btn{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
 .title{
     width: 100%;
     text-align: center;
     justify-content: center;
     color: #f0fcff;
+}
+
+.imgTitle{
+    width: 300px;
+    height: 300px;
+    margin-top: 3rem;
 }
 
 .container{
@@ -20,10 +32,11 @@
 }
 
 .cardImg{
+    font-family: 'Courier New', Courier, monospace;
     text-align: center;
     align-items: center;
     width: 300px;
-    height: 300px;
+    min-height: auto;
     background-color: #e2f9ff;
     border-radius: 10px;
 }
@@ -103,6 +116,7 @@ button:hover{
   
   .containerId {
       display: flex;
+      flex-direction: column;
   }
   
   .cardId {
@@ -114,4 +128,125 @@ button:hover{
     justify-content: center;
     align-items: center;
     height: auto;
+  }
+
+  form{
+    display: flex;
+    flex-flow: column wrap;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Courier New', Courier, monospace;
+  }
+
+  input {
+    width: 300px;
+    height: 50px;
+    margin-bottom: 5px;
+    text-align: center;
+    border-radius: 20px;
+    border: hidden;
+    background-color: #e2f9ff;
+    color: #2c3539;
+    outline-color: #54c487;
+  }
+  
+  .searchBtn {
+    font-weight: 600;
+    width: 200px;
+    height: 50px;
+    color: #2c3539;
+    justify-content: center;
+    align-items: center;
+    background-color: #e2f9ff;
+    margin: 0 15px;
+    border: hidden;
+    border-radius: 20px;
+  }
+  
+  .searchBtn:hover {
+    border: #e2f9ff solid 1px;
+    background-color: #54c487;
+    color: #e2f9ff;
+  }
+
+
+
+  .nextprevBtn{
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 30px;
+    font-weight: 600;
+    color: #2c3539;
+    background-color: #e2f9ff;
+    border: hidden;
+    border-radius: 20px;
+    margin-top: 2rem;
+  }
+  
+  .nextprevBtn:hover {
+    border: #e2f9ff solid 1px;
+    background-color: #54c487;
+    color: #e2f9ff;
+  }
+
+  .btnCard {
+    justify-content: center;
+    align-items: center;
+    border: #e2f9ff hidden;
+    border-radius: 20px;
+    width: 100px;
+    background-color: #f0fcff;
+    color: #2c3539;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 600;
+    margin-top: 1rem;
+    cursor: pointer;
+  }
+  
+  .btnCard:hover {
+    color: #e2f9ff;
+    background-color: #54c487;
+    border: #e2f9ff solid 0.5px;
+  }
+
+  .arrowContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .arrowBackImg{
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+  }
+
+  @media (max-width: 630px) {
+    .imgTitle {
+      width: 250px;
+      height: 250px;
+    }
+  
+    form {
+      width: 300px;
+      height: 150px;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+    }
+  
+    select,
+    input {
+      height: 30px;
+    }
+  
+    .searchBtn {
+      width: 150px;
+      height: 30px;
+    }
   }

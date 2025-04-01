@@ -1,6 +1,9 @@
 @if (locationId) {
     <div class="contentId" *ngIf="location">
         <div class="containerId">
+            <div class="arrowContainer" >
+                <img class="arrowBackImg" routerLink="/location" src="/arrow_back_24px.png" alt="">
+              </div>
             <div class="cardId">
                 <h2>Name: {{location.name}}</h2>
                 <h2># {{location.id}}</h2>
@@ -8,13 +11,17 @@
                 <p>Dimension: {{location.dimension}}</p>
                 <p>Local URL: {{location.url}}</p>
                 <p>Created At: {{location.created}}</p>
+                <!-- <div class="cardImgResident">
+                    <p class="titleResidents">Residents:</p>
+                    <img class="residentsImg" width="30px" height="30px" [src]="resident" alt="" *ngFor="let resident of location.residents">
+                </div> -->
             </div>
         </div>
     </div>
 } @else {
     <div class="content">
         <div class="title">
-            <img src="/icon_menu.png" alt="iconLoc">
+            <img class="imgTitle" src="/icon_menu.png" alt="iconLoc">
         </div>
     
         <form action="" [formGroup]="form">
@@ -25,19 +32,16 @@
         </form>
     
         <div class="btn">
-            <button (click)="anotherPage(previousUrl)" *ngIf="previousUrl">Previous</button>
-            <button (click)="anotherPage(nextUrl)" *ngIf="nextUrl">Next</button>
+            <button class="nextprevBtn" (click)="anotherPage(previousUrl)" *ngIf="previousUrl">Previous</button>
+            <button class="nextprevBtn" (click)="anotherPage(nextUrl)" *ngIf="nextUrl">Next</button>
         </div>
         <div class="container">
             <div class="cardImg" *ngFor="let location of locations">
-                <h3 [routerLink]="['/location/', location.id]">{{location.name}}</h3>
+                <h3>{{location.name}}</h3>
                 <p>{{location.id}}</p>
                 <p>{{location.type}}</p>
                 <p>{{location.dimension}}</p>
-                <div class="cardImgResident">
-                    <p class="titleResidents">Residents:</p>
-                    <img class="residentsImg" width="30px" height="30px" [src]="resident" alt="" *ngFor="let resident of location.residents">
-                </div>
+                <button class="btnCard" [routerLink]="['/location/', location.id]">Info View</button>
             </div>
         </div>
     </div>

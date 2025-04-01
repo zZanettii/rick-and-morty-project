@@ -5,11 +5,11 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-episodes',
-  standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, RouterLink],
-  templateUrl: './episodes.component.html',
-  styleUrl: './episodes.component.css',
+    selector: 'app-episodes',
+    standalone: true,
+    imports: [CommonModule, ReactiveFormsModule, RouterLink],
+    templateUrl: './episodes.component.html',
+    styleUrl: './episodes.component.css'
 })
 export class EpisodesComponent {
 
